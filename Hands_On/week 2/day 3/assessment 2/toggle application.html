@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Theme Toggle App</title>
+
+<style>
+body{
+    font-family:Arial;
+    transition:0.3s;
+    text-align:center;
+    padding-top:100px;
+}
+
+/* Light theme */
+.light{
+    background:white;
+    color:black;
+}
+
+/* Dark theme */
+.dark{
+    background:#222;
+    color:white;
+}
+
+button{
+    padding:10px 20px;
+    font-size:16px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Theme Toggle Application</h2>
+<button id="toggleBtn">Toggle Theme</button>
+
+<script>
+const body = document.body;
+const btn = document.getElementById("toggleBtn");
+
+/* Load saved theme */
+const savedTheme = localStorage.getItem("theme");
+
+if(savedTheme){
+    body.classList.add(savedTheme);
+}else{
+    body.classList.add("light");
+}
+
+/* Toggle function */
+function toggleTheme(){
+    if(body.classList.contains("light")){
+        body.classList.remove("light");
+        body.classList.add("dark");
+        localStorage.setItem("theme","dark");
+    }else{
+        body.classList.remove("dark");
+        body.classList.add("light");
+        localStorage.setItem("theme","light");
+    }
+}
+
+btn.addEventListener("click",toggleTheme);
+</script>
+
+</body>
+</html>

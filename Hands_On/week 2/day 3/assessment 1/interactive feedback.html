@@ -1,0 +1,112 @@
+<!--Requirements
+• Create a webpage with a “Submit Feedback” button.
+• When clicked, display a confirmation message dynamically.
+• Use JavaScript event listeners to handle the click event.
+ 
+️ Technical Constraints
+• Use plain HTML, CSS, and JavaScript.
+• Event handling must use addEventListener().
+• No external frameworks allowed.
+ 
+Expectations:
+• Proper DOM manipulation.
+• Clean and readable code.-->
+ 
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Feedback Validation</title>
+
+<style>
+body{
+    font-family:Arial;
+    background:rgb(14, 224, 179);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:rgb(100, 213, 233);
+    padding:30px;
+    width:320px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+input{
+    padding:8px;
+    width:50%;
+    font-size:15px;
+    margin-top:5px;
+}
+
+button{
+    padding:10px;
+    font-size:16px;
+    margin-top:15px;
+    background:green;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    width:50%;
+}
+
+#message{
+    margin-top:15px;
+    font-size:16px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<!-- Heading for the feedback form -->
+<h2>Feedback Form</h2>
+
+<input type="text" id="nameText" placeholder="Enter your name">
+<input type="text" id="feedbackText" placeholder="Enter feedback">
+<!-- Submit button-->
+<button id="submitBtn">Submit</button>
+
+<div id="message"></div>
+
+</div>
+
+<script>
+//Get references to DOM elements
+const nameInput = document.getElementById("nameText");
+//Get element for feedback input
+const feedbackInput = document.getElementById("feedbackText");
+//Get reference to the submit button and message display element
+const btn = document.getElementById("submitBtn");
+const msg = document.getElementById("message");
+//Add click event listener to the button to handle feedback submission
+btn.addEventListener("click", () => {
+
+    const name = nameInput.value.trim();
+    const feedback = feedbackInput.value.trim();
+//Validate input and display appropriate message 
+    if(name === "" || feedback === ""){
+        msg.textContent = "❌ Please enter name and feedback.";
+        msg.style.color = "red";
+    }
+    else{
+        msg.textContent = `✅ Thank you ${name}! Feedback submitted.`;
+        msg.style.color = "green";
+
+        nameInput.value = "";
+        feedbackInput.value = "";
+    }
+
+});
+
+</script>
+
+</body>
+</html>

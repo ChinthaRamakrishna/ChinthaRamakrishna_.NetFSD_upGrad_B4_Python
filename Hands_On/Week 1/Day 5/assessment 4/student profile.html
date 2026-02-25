@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Profile Manager</title>
+
+<style>
+body{
+  font-family:Arial;
+  background:#f2f2f2;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.box{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  width:300px;
+  box-shadow:0 0 15px rgba(0,0,0,0.2);
+  border:2px solid #ddd;
+  text-align:center;
+}
+
+input{
+  width:90%;
+  padding:8px;
+  margin:5px;
+}
+
+button{
+  padding:8px 12px;
+  margin:5px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  color:white;
+}
+
+.save{background:#007bff;}
+.update{background:#28a745;}
+
+.profile{
+  margin-top:15px;
+  padding:15px;
+  border:2px dashed #007bff;
+  border-radius:8px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<h2>Student Profile</h2>
+
+<input type="text" id="name" placeholder="Name">
+<input type="text" id="roll" placeholder="Roll No">
+<input type="number" id="marks" placeholder="Marks">
+
+<br>
+
+<button class="save" id="saveBtn">Save Profile</button>
+<button class="update" id="updateBtn">Update Marks</button>
+
+<div id="profile" class="profile"></div>
+</div>
+
+<script>
+/* Global student object */
+let student={
+  name:"",
+  rollNo:"",
+  marks:""
+};
+
+/* Display function */
+function updateStudentProfile(studentObj){
+  document.getElementById("profile").innerHTML=
+    "<b>Name:</b> "+studentObj.name+"<br>"+
+    "<b>Roll No:</b> "+studentObj.rollNo+"<br>"+
+    "<b>Marks:</b> "+studentObj.marks;
+}
+
+/* Update marks */
+function updateMarks(newMarks){
+  student.marks=newMarks;
+  updateStudentProfile(student);
+}
+
+/* Save profile */
+document.getElementById("saveBtn").addEventListener("click",function(){
+  student.name=document.getElementById("name").value;
+  student.rollNo=document.getElementById("roll").value;
+  student.marks=document.getElementById("marks").value;
+
+  updateStudentProfile(student);
+});
+
+/* Update marks button */
+document.getElementById("updateBtn").addEventListener("click",function(){
+  let newMarks=document.getElementById("marks").value;
+  updateMarks(newMarks);
+});
+</script>
+
+</body>
+</html>

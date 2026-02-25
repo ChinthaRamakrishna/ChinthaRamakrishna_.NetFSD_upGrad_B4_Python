@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personal Notes Saver</title>
+
+    <style>
+        /* Basic page styling */
+        body{
+            font-family: Arial;
+            background:#f2f2f2;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            margin:0;
+        }
+
+        .container{
+            background:white;
+            padding:18px;
+            border-radius:10px;
+            width:350px;
+            box-shadow:0 0 10px rgba(0,0,0,0.2);
+            text-align:center;
+        }
+
+        textarea{
+            width:100%;
+            height:120px;
+            padding:10px;
+            margin-top:10px;
+            border-radius:8px;
+        }
+
+        button{
+            margin-top:10px;
+            padding:10px 15px;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        .save{ background:#4CAF50; color:white; }
+        .clear{ background:#f44336; color:white; }
+    </style>
+
+    <script>
+        /* Load saved note when page loads */
+        function loadNote(){
+            let savedNote = localStorage.getItem("myNote");   // getItem()
+            if(savedNote){
+                document.getElementById("note").value = savedNote;
+            }
+        }
+
+        /* Save note to localStorage */
+        function saveNote(){
+            let noteText = document.getElementById("note").value;
+            localStorage.setItem("myNote", noteText);   // setItem()
+            alert("Note Saved!");
+        }
+
+        /* Clear note */
+        function clearNote(){
+            localStorage.removeItem("myNote");   // removeItem()
+            document.getElementById("note").value = "";
+        }
+    </script>
+</head>
+
+<!-- body onload event -->
+<body onload="loadNote()">
+
+    <div class="container">
+        <h2>Personal Notes Saver</h2>
+
+        <!-- Requirement: textarea for writing notes -->
+        <textarea id="note" placeholder="Write your notes here..."></textarea>
+
+        <br>
+
+        <!-- Requirement: Save button using inline onclick -->
+        <button class="save" onclick="saveNote()">Save</button>
+
+        <!-- Requirement: Clear button -->
+        <button class="clear" onclick="clearNote()">Clear</button>
+
+        <!-- Requirements in comments:
+            ✔ textarea for notes
+            ✔ Save button with onclick
+            ✔ Clear button
+            ✔ localStorage.setItem()
+            ✔ localStorage.getItem()
+            ✔ localStorage.removeItem()
+            ✔ body onload to display saved note
+            ✔ Pure HTML + JavaScript (no backend)
+            ✔ Data stored as key-value pair
+        -->
+    </div>
+
+</body>
+</html>

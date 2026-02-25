@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+</head>
+<body>
+
+<!-- Name Heading -->
+<h1>Rama Krishna</h1>
+
+<!-- Navigation Bar -->
+<nav>
+    <a href="index.html">Home</a> |
+    <a href="contact.html">Contact</a>
+</nav>
+
+<hr>
+
+<h2>Registration Form</h2>
+
+<form>
+
+<label>Name:</label><br>
+<input type="text" placeholder="Enter your name" required>
+<br><br>
+
+<label>Email:</label><br>
+<input type="email" placeholder="Enter your email" required>
+<br><br>
+
+<label>Password:</label><br>
+<input type="password" placeholder="Enter password" required>
+<br><br>
+
+<label>Gender:</label><br>
+<input type="radio" name="gender" required> Male
+<input type="radio" name="gender" required> Female
+<br><br>
+
+<!-- Data List -->
+<label>Select Course:</label><br>
+<input list="courses" placeholder="Select or type course" required>
+
+<datalist id="courses">
+    <option value="HTML">
+    <option value="CSS">
+    <option value="JavaScript">
+    <option value="Python">
+</datalist>
+<br><br>
+
+<input type="submit" value="Register">
+
+</form>
+
+</body>
+</html>

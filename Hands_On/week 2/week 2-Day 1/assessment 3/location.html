@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Location Logger</title>
+
+  <style>
+    body{
+      font-family: Arial;
+      text-align:center;
+      margin-top:50px;
+    }
+    button{
+      padding:10px 20px;
+    }
+    ul{
+      list-style:none;
+    }
+  </style>
+</head>
+
+<body onload="showHistory()">
+
+<h2>Location Based Weather Logger</h2>
+
+<!-- Requirement: Inline event -->
+<button onclick="getLocation()">Get My Location</button>
+
+<p id="current"></p>
+
+<h3>History</h3>
+<ul id="history"></ul>
+
+<script>
+
+function getLocation(){
+  if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(success, error, {
+      timeout:5000
+    });
+  }else{
+    alert("Geolocation not supported");
+  }
+}
+
+/* Requirement: Success callback */
+function success(position){
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+
+  document.getElementById("current").innerText =
+    "Latitude: " + lat + " | Longitude: " + lon;
+
+  saveLocation(lat, lon);
+}
+
+/* Requirement: Error callback */
+function error(err){
+  let msg="";
+  if(err.code==1) msg="Permission denied";
+  else if(err.code==2) msg="Location unavailable";
+  else if(err.code==3) msg="Timeout";
+
+  alert(msg);
+}
+
+/* Requirement: Store JSON and keep last 5 */
+function saveLocation(lat, lon){
+  let history = JSON.parse(localStorage.getItem("locations")) || [];
+
+  history.unshift({
+    latitude:lat,
+    longitude:lon,
+    time:new Date().toLocaleString()
+  });
+
+  history = history.slice(0,5);
+
+  localStorage.setItem("locations", JSON.stringify(history));
+
+  showHistory();
+}
+
+/* Requirement: Display history on load */
+function showHistory(){
+  let history = JSON.parse(localStorage.getItem("locations")) || [];
+
+  let list=document.getElementById("history");
+  list.innerHTML="";
+
+  history.forEach(loc=>{
+    let li=document.createElement("li");
+    li.innerText = loc.latitude+" , "+loc.longitude+" ("+loc.time+")";
+    list.appendChild(li);
+  });
+}
+
+</script>
+
+</body>
+</html>

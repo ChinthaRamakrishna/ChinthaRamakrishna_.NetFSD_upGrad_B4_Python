@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Number Analysis Tool</title>
+
+<style>
+body{
+font-family:Arial;
+background:#222;
+color:white;
+text-align:center;
+margin-top:40px;
+}
+.card{
+background:#333;
+width:320px;
+margin:auto;
+padding:20px;
+border-radius:10px;
+}
+input,button{
+width:90%;
+padding:10px;
+margin:10px;
+border:none;
+border-radius:5px;
+}
+button{
+background:#00bcd4;
+color:white;
+}
+.result{
+background:#444;
+padding:8px;
+margin:8px;
+border-radius:5px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>Number Analysis Tool</h2>
+
+<!-- Requirement: Enter number -->
+<input type="number" id="num" placeholder="Enter number">
+
+<!-- Requirement: Button to analyze -->
+<button onclick="analyze()">Analyze Number</button>
+
+<div id="sign" class="result"></div>
+<div id="parity" class="result"></div>
+<div id="list" class="result"></div>
+
+</div>
+
+<script>
+
+/* Requirement: Use variables and conditional logic */
+function analyze(){
+
+let n = Number(document.getElementById("num").value);
+
+/* Check positive or negative */
+if(n >= 0){
+document.getElementById("sign").innerHTML="Sign: Positive Number";
+}else{
+document.getElementById("sign").innerHTML="Sign: Negative Number";
+}
+
+/* Check even or odd */
+if(n % 2 == 0){
+document.getElementById("parity").innerHTML="Parity: Even Number";
+}else{
+document.getElementById("parity").innerHTML="Parity: Odd Number";
+}
+
+/* Numbers from 1 to n */
+let text="";
+for(let i=1;i<=n;i++){
+text += i + " ";
+}
+document.getElementById("list").innerHTML="Numbers: " + text;
+
+}
+
+</script>
+
+</body>
+</html>
