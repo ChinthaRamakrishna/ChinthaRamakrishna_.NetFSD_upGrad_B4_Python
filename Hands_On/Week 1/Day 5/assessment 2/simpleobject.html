@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Info Display</title>
+  <style>
+    body{font-family:Arial;text-align:center;margin-top:80px}
+    input{padding:8px;margin:5px}
+    button{padding:8px}
+  </style>
+</head>
+<body>
+
+<h2>User Info</h2>
+
+<!-- Inputs -->
+<input type="text" id="name" placeholder="Enter Name">
+<input type="number" id="age" placeholder="Enter Age">
+<input type="text" id="city" placeholder="Enter City">
+
+<br>
+
+<button onclick="handleClick()">Display Info</button>
+
+<p id="p1"></p>
+<p id="p2"></p>
+<p id="p3"></p>
+
+<script>
+// Button click
+function handleClick(){
+
+  // Create object
+  let user={
+    name:document.getElementById("name").value,
+    age:document.getElementById("age").value,
+    city:document.getElementById("city").value
+  };
+
+  displayUserInfo(user); // pass object
+}
+
+// Function accepts object parameter
+function displayUserInfo(userObj){
+
+  // Dot notation
+  document.getElementById("p1").innerText="Name: "+userObj.name;
+  document.getElementById("p2").innerText="Age: "+userObj.age;
+  document.getElementById("p3").innerText="City: "+userObj.city;
+}
+</script>
+
+</body>
+</html>

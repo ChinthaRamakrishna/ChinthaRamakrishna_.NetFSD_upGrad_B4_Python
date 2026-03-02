@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Weather Fetcher</title>
+</head>
+<body>
+
+<h2>Weather Report</h2>
+<button onclick="getWeatherPromise()">Fetch (Promise)</button>
+<button onclick="getWeatherAsync()">Fetch (Async/Await)</button>
+
+<pre id="output"></pre>
+
+<script>
+// API URL (Hyderabad example)
+const url =
+"https://api.open-meteo.com/v1/forecast?latitude=17.38&longitude=78.48&current_weather=true";
+
+const display = (text) => {
+  document.getElementById("output").innerText = text;
+};
+
+
+// PROMISE VERSION
+
+const getWeatherPromise = () => {
+  fetch(url)
+    .then(res => {
+      if (!res.ok) throw new Error("Network error");
+      return res.json();
+    })
+    .then(data => {
+      const w = data.current_weather;
+
+      const report = `
+--- WEATHER REPORT (Promise) ---
+Temperature : ${w.temperature}°C
+Wind Speed  : ${w.windspeed} km/h
+Time        : ${w.time}
+`;
+      display(report);
+    })
+    .catch(err => display("Error: " + err.message));
+};
+
+//  ASYNC / AWAIT VERSION
+
+const getWeatherAsync = async () => {
+  try {
+    const res = await fetch(url);
+
+    if (!res.ok) throw new Error("Network error");
+
+    const data = await res.json();
+    const w = data.current_weather;
+
+    const report = `
+--- WEATHER REPORT (Async/Await) ---
+Temperature : ${w.temperature}°C
+Wind Speed  : ${w.windspeed} km/h
+Time        : ${w.time}
+`;
+    display(report);
+
+  } catch (err) {
+    display("Error: " + err.message);
+  }
+};
+</script>
+
+</body>
+</html>
