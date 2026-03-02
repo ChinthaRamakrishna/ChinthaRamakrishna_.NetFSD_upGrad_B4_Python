@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Styled Webpage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Welcome to My Website</h1>
+    <h2>Learning CSS Styling</h2>
+
+    <p1>Learning CSS styling involves understanding how to use Cascading Style Sheets (CSS) to control the layout, colors, fonts, and overall visual appearance of a webpage, which is structured using HTML.</p1>
+    <section class="info-section">
+        <h3>About CSS</h3>
+        <p>Cascading Style Sheets is a style sheet language used for specifying the presentation and styling of a document written in a markup language, such as HTML or XML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript..</p>
+    </section>
+
+    <div class="box">
+        Margin and padding are both used to create space around an HTML element's content, but they operate in different areas of the CSS Box Model. 
+Padding is the space inside the element's border, between the content and the border. Its background color is visible in this area.
+Margin is the space outside the element's border, creating a gap between it and other nearby elements.
+    </div>
+
+    <h3>Contact Form</h3>
+    <form>
+        <label>Name:</label><br>
+        <input type="text"><br><br>
+
+        <label>Email:</label><br>
+        <input type="email"><br><br>
+
+        <label>Telephone:</label><br>
+        <input type="tel"><br><br>
+
+        
+    <!-- Gender -->
+    <label>Gender:</label><br>
+    <input type="radio" name="gender" value="Male" required> Male
+    <input type="radio" name="gender" value="Female"> Female
+    <input type="radio" name="gender" value="Other"> Other
+    <br><br>
+
+    <!-- Course -->
+    <label>Select Course:</label><br>
+    <select required>
+        <option value="">--Select Course--</option>
+        <option>Python</option>
+        <option>Java</option>
+        <option>Web Development</option>
+        <option>Data Science</option>
+    </select>
+    <br><br>
+        <input type="submit" value="Submit">
+    </form>
+ 
+
+</body>
+</html>
+#css
+/* Body Styling */
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+/* Heading Styling */
+h1 {
+    color: darkblue;
+    text-align: center;
+}
+
+h2 {
+    color: green;
+}
+
+h3 {
+    color: brown;
+}
+
+/* Paragraph Styling */
+p1 {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Section Styling */
+.info-section {
+    background-color: lightyellow;
+    border: 2px solid orange;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+/* Box Model Example */
+.box {
+    background-color: lightblue;
+    border: 3px solid blue;
+    margin: 30px;
+    padding: 20px;
+}
+
+/* Form Styling */
+form {
+    background-color: rgb(137, 187, 202);
+    padding: 20px;
+    border: 2px solid gray;
+    width: 300px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 80%;
+    padding: 8px;
+    margin-bottom: 8px;
+}
+
+input[type="submit"] {
+    background-color: darkblue;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: green;
+}
+
+
