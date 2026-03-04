@@ -1,0 +1,81 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+}
+
+/* Header */
+.header {
+    background-color: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 2%;
+}
+
+/* Blog Container using Flexbox */
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+    padding: 3%;
+    box-sizing: border-box;
+}
+
+/* Blog Card */
+.blog-card {
+    background-color: white;
+    flex: 1 1 22%;
+    padding: 2%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+/* Card Title */
+.blog-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+/* Card Description */
+.blog-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Read More Button */
+.read-btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #2563eb;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+
+/* Hover Effect */
+.read-btn:hover {
+    background-color: #1e40af;
+}
+
+/* Tablet View */
+@media (max-width: 992px) {
+    .blog-card {
+        flex: 1 1 45%;
+    }
+}
+
+/* Mobile View */
+@media (max-width: 600px) {
+    .blog-container {
+        flex-direction: column;
+    }
+
+    .blog-card {
+        flex: 1 1 100%;
+    }
+}

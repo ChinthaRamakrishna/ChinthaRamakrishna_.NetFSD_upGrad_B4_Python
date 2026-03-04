@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { margin:0; font-family: Arial; background:#f8f9fa; }
+        header { background:#343a40; padding:15px; }
+        nav { display:flex; flex-direction:column; }
+        nav a {
+            color:white;
+            text-decoration:none;
+            padding:10px;
+            text-align:center;
+        }
+        nav a:hover { background:#495057; }
+
+        section { padding:20px; border-bottom:1px solid #ccc; }
+
+        h3 { color:#0d6efd; }
+
+        @media(min-width:768px){
+            nav { flex-direction:row; justify-content:center; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+	<!-- Link to Home Page -->
+        <a href="index.html">Home</a>
+        <a href="#iphone">iPhone 15</a>
+        <a href="#laptop">Dell Laptop</a>
+        <a href="#watch">Smart Watch</a>
+	<a href="#fridge">Samsung Fridge</a>
+    </nav>
+</header>
+
+<!-- iPhone Section -->
+<section id="iphone">
+    <h3>iPhone 15</h3>
+    <p>Price: ₹79,999</p>
+    <p>Storage: 128GB</p>
+    <p>Camera: 48MP</p>
+</section>
+
+<!-- Laptop Section -->
+<section id="laptop">
+    <h3>Dell Laptop</h3>
+    <p>Price: ₹55,000</p>
+    <p>RAM: 16GB</p>
+    <p>Processor: Intel i7</p>
+</section>
+
+<!-- Watch Section -->
+<section id="watch">
+    <h3>Smart Watch</h3>
+    <p>Price: ₹5,000</p>
+    <p>Battery Life: 5 Days</p>
+    <p>Features: Heart Rate Monitor</p>
+</section>
+
+<section id="Fridge">
+    <h3>Samsung Fridge</h3>
+    <p>Price: ₹70,000</p>
+    <p>Rating: 5 star</p>
+</section>
+
+</body>
+</html>

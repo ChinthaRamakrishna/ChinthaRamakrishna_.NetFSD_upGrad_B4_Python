@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background-color: #eef2f3;
+        }
+
+        header {
+            background-color: #0d6efd;
+            padding: 15px;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #084298;
+        }
+
+        section {
+            padding: 20px;
+            margin: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h3 {
+            color: #0d6efd;
+        }
+
+        /* Button Style */
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #198754;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;   /* Rounded shape */
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #146c43;
+        }
+
+        @media (min-width:768px) {
+            nav {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            nav a {
+                padding: 15px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section>
+    <h2>Welcome to Our Electronics Store</h2>
+    <p>We provide high quality electronic products at best prices.</p>
+</section>
+
+<section>
+    <h3>💻 Laptop</h3>
+    <p>High performance laptops with latest processors and 16GB RAM.</p>
+    <a href="products.html#laptop" class="btn">View Laptop</a>
+</section>
+
+<section>
+    <h3>📱 Smartphone</h3>
+    <p>Latest smartphones with powerful cameras and long battery life.</p>
+    <a href="products.html#iphone" class="btn">View Smartphone</a>
+</section>
+
+<section>
+    <h3>❄️ Refrigerator</h3>
+    <p>Energy efficient refrigerators with modern cooling technology.</p>
+    <a href="products.html#fridge" class="btn">View Refrigerator</a>
+</section>
+
+</body>
+</html>

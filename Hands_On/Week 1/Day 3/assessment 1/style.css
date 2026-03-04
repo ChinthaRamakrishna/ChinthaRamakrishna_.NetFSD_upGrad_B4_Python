@@ -1,0 +1,71 @@
+/* Body Styling */
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+/* Heading Styling */
+h1 {
+    color: darkblue;
+    text-align: center;
+}
+
+h2 {
+    color: green;
+}
+
+h3 {
+    color: brown;
+}
+
+/* Paragraph Styling */
+p1 {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Section Styling */
+.info-section {
+    background-color: lightyellow;
+    border: 2px solid orange;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+/* Box Model Example */
+.box {
+    background-color: lightblue;
+    border: 3px solid blue;
+    margin: 30px;
+    padding: 20px;
+}
+
+/* Form Styling */
+form {
+    background-color: rgb(137, 187, 202);
+    padding: 20px;
+    border: 2px solid gray;
+    width: 300px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 80%;
+    padding: 8px;
+    margin-bottom: 8px;
+}
+
+input[type="submit"] {
+    background-color: darkblue;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: green;
+}
+
+
